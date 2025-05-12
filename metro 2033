@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Метро 2033</title>
+    <style>
+        /* Основные стили */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://example.com/metro-bg.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        /* Контейнер */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(20, 20, 20, 0.9);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            border-left: 1px solid #444;
+            border-right: 1px solid #444;
+            min-height: 100vh;
+        }
+
+        /* Шапка */
+        header {
+            background: linear-gradient(to right, #2a0a0a, #1a1a1a);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #8B0000;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #8B0000, transparent);
+        }
+
+        h1 {
+            color: #c0a080;
+            text-shadow: 2px 2px 4px #000;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        /* Навигация */
+        nav {
+            background-color: #1a1a1a;
+            padding: 10px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            border: 1px solid #444;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav li {
+            display: inline;
+        }
+
+        nav a {
+            color: #c0a080;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 3px;
+            transition: all 0.3s;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            background-color: #8B0000;
+            color: #fff;
+        }
+
+        /* Контент */
+        .content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+
+        .main-content {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #444;
+        }
+
+        .sidebar {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #444;
+        }
+
+        h2 {
+            color: #c0a080;
+            border-bottom: 1px solid #8B0000;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        /* Карточки станций */
+        .station-card {
+            background-color: #252525;
+            border-left: 4px solid #8B0000;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 5px 5px 0;
+            transition: all 0.3s;
+        }
+
+        .station-card:hover {
+            background-color: #2a2a2a;
+            transform: translateX(5px);
+        }
+
+        .station-name {
+            color: #c0a080;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* Футер */
+        footer {
+            background: linear-gradient(to right, #1a1a1a, #2a0a0a);
+            padding: 15px;
+            text-align: center;
+            margin-top: 30px;
+            border-top: 3px solid #8B0000;
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        /* Элементы интерфейса Metro */
+        .metro-button {
+            background-color: #8B0000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .metro-button:hover {
+            background-color: #a00;
+            box-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav li {
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>МЕТРО 2033</h1>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Станции</a></li>
+                <li><a href="#">Фракции</a></li>
+                <li><a href="#">Опасности</a></li>
+                <li><a href="#">Карта</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <main class="main-content">
+                <h2>Добро пожаловать в метро</h2>
+                <p>Московское метро - последнее убежище человечества после ядерной войны. Тысячи людей выживают в его туннелях и на станциях, борясь не только с радиацией и мутантами, но и друг с другом.</p>
+                
+                <div class="station-card">
+                    <div class="station-name">Станция ВДНХ</div>
+                    <p>Одна из самых больших станций метро, находящаяся под контролем Федерации. Главный торговый узел на севере метро.</p>
+                </div>
+                
+                <div class="station-card">
+                    <div class="station-name">Станция Полис</div>
+                    <p>Центр знаний и культуры в метро. Здесь находится Библиотека и Совет Полиса, пытающийся сохранить человеческие ценности.</p>
+                </div>
+                
+                <button class="metro-button">Подробнее о метро</button>
+            </main>
+
+            <aside class="sidebar">
+                <h2>Новости метро</h2>
+                <div class="station-card">
+                    <div class="station-name">Нападение на Рязанскую</div>
+                    <p>Темные силы атаковали станцию Рязанская. Жители отбились, но потери велики.</p>
+                </div>
+                
+                <div class="station-card">
+                    <div class="station-name">Торговый караван</div>
+                    <p>Из Ганзы в Полис отправляется большой торговый караван с медикаментами и боеприпасами.</p>
+                </div>
+                
+                <div class="station-card">
+                    <div class="station-name">Опасность в туннелях</div>
+                    <p>Увеличилась активность мутантов между станциями Тульская и Нагатинская.</p>
+                </div>
+            </aside>
+        </div>
+
+        <footer>
+            © 2033 Московское метро. Все права защищены. Оставайтесь в безопасности.
+        </footer>
+    </div>
+</body>
+</html>
